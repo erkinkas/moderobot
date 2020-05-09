@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d9faeeebcfbef1ea9201a925037f3b7623639d44c8521f3fa8008e4cac698df5"
+            "sha256": "409b175c684aad137f0d5e6dbf05abfef768cfa26dda236369809574856008fe"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,8 +38,11 @@
             "version": "==2.9"
         },
         "pytelegrambotapi": {
-            "editable": true,
-            "path": "./telebot"
+            "hashes": [
+                "sha256:8ef8e54098efd29a6bcac28d127480ae2b7491c1d33e4e0c7bbf0fc8949e0fae"
+            ],
+            "index": "pypi",
+            "version": "==3.7.1"
         },
         "requests": {
             "hashes": [
