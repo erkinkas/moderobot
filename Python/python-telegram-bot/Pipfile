@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-python-telegram-bot = {editable = true,path = "./python-telegram-bot"}
+python-telegram-bot = "*"
 
 [requires]
 python_version = "3.7"
