@@ -23,7 +23,7 @@ from moderobot.moderobot import ModeroBot
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.DEBUG)
+                    level=logging.INFO)
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +57,7 @@ def main():
     # Post version 12 this will no longer be necessary
     BOT_TOKEN = os.environ["TELEBOT_BOT_TOKEN"]
     updater = Updater(BOT_TOKEN, use_context=True)
+    moderoBot = ModeroBot(logger)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -67,12 +68,15 @@ def main():
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
+    dp.add_handler(MessageHandler(Filters.status_update.new_chat_members, moderoBot.greet_new_members))
 
     # log all errors
     dp.add_error_handler(error)
 
     # Start the Bot
     updater.start_polling()
+
+    logger.info("started")
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
