@@ -2,7 +2,7 @@
 
 
 
-`git clone https://github.com/python-telegram-bot/python-telegram-bot.git`
+`git clone https://github.com/eternnoir/pyTelegramBotAPI.git`
 
 OR
 
@@ -12,4 +12,4 @@ OR
 `pipenv install`
 
 `export TELEBOT_BOT_TOKEN=TOKEN`
-`pipenv run python main.py`
+`pipenv run python ./moderobot/main.py`
